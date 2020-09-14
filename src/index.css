@@ -52,17 +52,19 @@ nav {
 .tape-holder {
   position: relative;
   z-index: 2;
-  width: 30%;
-  height: 58%;
+  width: 40%;
+  height: 68%;
   top: 20%;
   left: 50%;
+  opacity: 1;
   transform: translateX(-50%);
   background: transparent;
-  background-image: url("https://freecodecampassets.s3.us-east-2.amazonaws.com/Portfolio+Assets+1/tapeTurquoiseTest.png");
+  background-image: url("https://freecodecampassets.s3.us-east-2.amazonaws.com/Portfolio+Assets+1/Apr11TapeBlue2.png");
   background-size: 100%;
   background-repeat: no-repeat;
   filter: drop-shadow(-8px 8px 10px black);
   animation: opac 4s ease forwards 0s;
+  transition: opacity 3s;
 }
 
 @keyframes opac {
@@ -74,10 +76,38 @@ nav {
   }
 }
 
+.fade-tape-holder-out {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 0;
+  width: 40%;
+  height: 68%;
+  top: 20%;
+  left: 50%;
+  opacity: 1;
+  transform: translateX(-50%);
+  background: transparent;
+  background-image: url("https://freecodecampassets.s3.us-east-2.amazonaws.com/Portfolio+Assets+1/Apr11TapeBlue2.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  filter: drop-shadow(-8px 8px 10px black);
+  animation: opacOut 0.5s ease forwards 0s;
+
+  /*transition: opacity 15s;*/
+}
+@keyframes opacOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 .fade-links-in {
   position: relative;
   list-style-type: none;
-  top: 135px;
+  top: 80px;
   position: inline;
   width: 80%;
   margin-left: 50%;
@@ -93,7 +123,7 @@ nav {
 .fade-links-out {
   position: relative;
   list-style-type: none;
-  margin-top: 135px;
+  top: 80px;
   position: inline;
   width: 80%;
   margin-left: 50%;
@@ -102,7 +132,7 @@ nav {
   display: flex;
   justify-content: center;
   opacity: 0;
-  transition: opacity 3s;
+  transition: opacity 0s;
 }
 .link {
   color: #f0ebe9;
@@ -156,7 +186,7 @@ nav {
   justify-content: center;
   left: 50%;
   transform: translateX(-50%);
-  margin-top: 30px;
+  margin-top: 50px;
   width: 40%;
   background: transparent;
   transition: opacity 11s;
@@ -169,7 +199,7 @@ nav {
   justify-content: center;
   left: 50%;
   transform: translateX(-50%);
-  margin-top: 30px;
+  margin-top: 50px;
   width: 40%;
   background: transparent;
   transition: opacity 3s;
@@ -196,18 +226,18 @@ nav {
 }
 #full-name {
   position: relative;
-  margin-top: 13%;
+  margin-top: 11%;
 
   height: 70%;
-  width: 70%;
+  width: 60%;
   background: transparent;
 }
 #soft-dev {
   position: relative;
-  margin-top: 20%;
+  margin-top: 15%;
 
   height: 70%;
-  width: 70%;
+  width: 60%;
   background: transparent;
 }
 
@@ -233,7 +263,7 @@ nav {
   background: #080808;
 
   z-index: 4;
-  transition: opacity 1s;
+  transition: opacity 4s;
 }
 
 img.source-image {
@@ -269,39 +299,124 @@ img.source-image {
 
 .next-button {
   position: absolute;
-  height: 25px;
-  width: 25px;
+  height: 75px;
+  width: 75px;
   z-index: 11;
-  left: 48%;
-  top: 4vh;
-  background: black;
+  left: 60%;
+  top: 50vh;
+  background: none;
+  outline: none;
   border-radius: 2px;
   border-style: none;
-  color: white;
+  color: #989a9c;
   text-align: center;
   transform: translateX(-50%);
+  opacity: 0.5;
+  filter: drop-shadow(3px 3px 3px black);
+}
+
+.next-button:hover {
+  opacity: 1;
 }
 
 .prev-button {
   position: absolute;
   z-index: 12;
-  height: 25px;
-  width: 25px;
-  left: 52%;
-  top: 4vh;
-  background: black;
+  height: 75px;
+  width: 75px;
+  left: 40%;
+  top: 50vh;
+  background: none;
+  outline: none;
   border-radius: 2px;
   border-style: none;
-  color: white;
+  color: #989a9c;
   text-align: center;
   transform: translateX(-50%);
+  opacity: 0.5;
+  filter: drop-shadow(3px 3px 3px black);
 }
 
-.card {
+.prev-button:hover {
+  opacity: 1;
+}
+
+.slides {
+  position: absolute;
+  top: 10%;
+  width: 50%;
+  height: 350px;
+  background: transparent;
+  color: red;
+  z-index: 12;
+  margin-left: 25%;
+
+  transition: opacity 20s;
+  animation: opac2 2s ease forwards 0s;
+}
+
+.app-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 45px;
+  filter: drop-shadow(3px 3px 3px black);
+  text-align: center;
+  color: #365bff;
+  justify-content: center;
+  background: transparent;
+}
+
+.app-link {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  color: white;
+  filter: drop-shadow(3px 3px 3px black);
+  text-align: center;
+  opacity: 0;
+  text-decoration: none;
+  animation: opac2 8s ease forwards 4s;
+}
+
+@keyframes opac2 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.app-link:hover {
+  font-size: 18px;
+}
+
+.slide-info {
+  position: absolute;
+  top: 0%;
+  left: -320px;
+  font-size: 50px;
+  width: 40%;
+  height: 200px;
+  background: transparent;
+  color: black;
+  z-index: 11;
+  animation: opac2 8s ease forwards 0s;
+}
+
+@keyframes opac2 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.Desktop {
   position: relative;
   z-index: 10;
-  transform: scale(0.2);
-  top: -75vh;
+  transform: scale(0.45);
+  top: -65vh;
+  margin-left: -30%;
 }
 
 #soft-dev path:nth-child(1) {

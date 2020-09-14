@@ -8,7 +8,7 @@ function Background({ size }) {
     return (
       <img
         className="skyline-image"
-        src="https://freecodecampassets.s3.us-east-2.amazonaws.com/Portfolio+Assets+1/nySunsetThinBlinged1a.png"
+        src="https://freecodecampassets.s3.us-east-2.amazonaws.com/Portfolio+Assets+1/palmsSunset1Artboard+1.png"
       ></img>
     );
   } else {

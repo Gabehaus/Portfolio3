@@ -7,6 +7,7 @@ import { data } from "./data/data";
 import Card from "./Card";
 import { SizeMe } from "react-sizeme";
 import Background from "./Background";
+import CarouselSpring from "./CarouselSpring";
 
 function App() {
   const [portDisplay, setPortDisplay] = useState(false);
@@ -14,6 +15,9 @@ function App() {
   const [accountsDisplay, setAccountsDisplay] = useState(true);
   const [properties, setProperties] = useState(data.properties);
   const [property, setProperty] = useState(data.properties[0]);
+  const [appAddress, setAppAddress] = useState(property.name);
+  const [appColor, setAppColor] = useState(property.color);
+  //const [goToSlide, setGoToSlide] = useState(0);
 
   let portStyleOne = {
     position: "absolute",
@@ -43,12 +47,20 @@ function App() {
 
   function nextProperty() {
     const newIndex = property.index + 1;
-    setProperty(data.properties[newIndex]);
+    if (property.index < properties.length - 1) {
+      setProperty(data.properties[newIndex]);
+    } else {
+      setProperty(data.properties[0]);
+    }
   }
 
   function prevProperty() {
     const newIndex = property.index - 1;
-    setProperty(data.properties[newIndex]);
+    if (property.index > 0) {
+      setProperty(data.properties[newIndex]);
+    } else {
+      setProperty(data.properties[properties.length - 1]);
+    }
   }
 
   return (
@@ -74,29 +86,42 @@ function App() {
           >
             X
           </button>
+          {/*
           <button
             className="next-button"
-            onClick={() => nextProperty()}
-            disabled={property.index === data.properties.length - 1}
+            onClick={() => {
+              setGoToSlide(goToSlide => goToSlide + 1);
+              console.log({ goToSlide });
+            }}
           >
             +
           </button>
           <button
             className="prev-button"
-            onClick={() => prevProperty()}
-            disabled={property.index === 0}
+            onClick={() => {
+              setGoToSlide(goToSlide => goToSlide - 1);
+              console.log({ goToSlide });
+            }}
           >
             -
-          </button>
+          </button> */}
           <div className="page">
             <section>
               <h1>REACT APPLICATIONS</h1>
             </section>
-
-            <Card property={property} />
+            <CarouselSpring
+              showNavigation={false}
+              nextProperty={nextProperty}
+              prevProperty={prevProperty}
+              name={property.name}
+              color={property.color}
+              appLink={property.app}
+              gitLink={property.github}
+            />
+            {/*<Card property={property} /> */}
           </div>
         </div>
-        <div className="tape-holder">
+        <div className={linksDisplay ? "tape-holder" : "fade-tape-holder-out"}>
           <FullName2 />
           <SoftDev />
         </div>
