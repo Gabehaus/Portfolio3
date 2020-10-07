@@ -154,7 +154,7 @@ code {
 
     z-index: 6;
     opacity: 0;
-    animation: linksIn 2s ease forwards 5s;
+    animation: linksIn 2s ease forwards 1.3s;
   }
 
   @keyframes linksIn {
@@ -190,14 +190,50 @@ code {
     width: 20%;
 
     background: transparent;
+    animation: linksFontSize 0.5s ease forwards 4.55s;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+
+  @keyframes linksFontSize {
+    0% {
+      font-size: 60px;
+    }
+    50% {
+      font-size: 70px;
+    }
+    100% {
+      font-size: 60px;
+    }
+  }
+
+  .link:hover {
+    -webkit-transition: all 0.7s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+    -ms-transform: scale(1.2, 1.2); /* IE 9 */
+    -webkit-transform: scale(1.2, 1.2); /* Safari */
+    transform: scale(1.2, 1.2);
   }
 
   .coloredLink {
     color: #782aff;
   }
 
+  .coloredLink:hover {
+    color: #b235ff;
+  }
+
   .blackLink {
     color: black;
+  }
+
+  .blackLink:hover {
+    color: #470094;
   }
 
   .foot {
@@ -249,7 +285,7 @@ code {
 
     background: transparent;
     opacity: 0;
-    animation: linksIn 2s ease forwards 5.5s;
+    animation: linksIn 2s ease forwards 1s;
   }
 
   @keyframes linksIn {
@@ -299,42 +335,42 @@ code {
   #nameID path:nth-child(1) {
     stroke-dasharray: 824;
     stroke-dashoffset: 824;
-    animation: line-anim 2s ease forwards 1.5s, fill 2s ease forwards 2.1s;
+    animation: line-anim 2s ease forwards 0.7s, fill 2s ease forwards 1.3s;
   }
   #nameID path:nth-child(2) {
     stroke-dasharray: 451;
     stroke-dashoffset: 451;
-    animation: line-anim 2s ease forwards 1.9s, fill 2s ease forwards 2.5s;
+    animation: line-anim 2s ease forwards 1.1s, fill 2s ease forwards 1.7s;
   }
   #nameID path:nth-child(3) {
     stroke-dasharray: 605;
     stroke-dashoffset: 605;
-    animation: line-anim 2s ease forwards 2.5s, fill 2s ease forwards 2.7s;
+    animation: line-anim 2s ease forwards 1.7s, fill 2s ease forwards 1.9s;
   }
   #nameID path:nth-child(4) {
     stroke-dasharray: 444;
     stroke-dashoffset: 444;
-    animation: line-anim 2s ease forwards 2.9s, fill 2s ease forwards 2.9s;
+    animation: line-anim 2s ease forwards 2.1s, fill 2s ease forwards 2.1s;
   }
   #nameID path:nth-child(5) {
     stroke-dasharray: 739;
     stroke-dashoffset: 739;
-    animation: line-anim 2s ease forwards 3.3s, fill 2s ease forwards 3.3s;
+    animation: line-anim 2s ease forwards 2.5s, fill 2s ease forwards 2.5s;
   }
   #nameID path:nth-child(6) {
     stroke-dasharray: 451;
     stroke-dashoffset: 451;
-    animation: line-anim 2s ease forwards 3.9s, fill 2s ease forwards 3.7s;
+    animation: line-anim 2s ease forwards 3.1s, fill 2s ease forwards 2.9s;
   }
   #nameID path:nth-child(7) {
     stroke-dasharray: 329;
     stroke-dashoffset: 329;
-    animation: line-anim 2s ease forwards 4.3s, fill 2s ease forwards 4.3s;
+    animation: line-anim 2s ease forwards 3.5s, fill 2s ease forwards 3.5s;
   }
   #nameID path:nth-child(8) {
     stroke-dasharray: 342;
     stroke-dashoffset: 342;
-    animation: line-anim 2s ease forwards 4.6s, fill 2s ease forwards 4.6s;
+    animation: line-anim 2s ease forwards 3.8s, fill 2s ease forwards 3.8s;
   }
   @keyframes line-anim {
     to {
@@ -380,7 +416,7 @@ code {
   .fullStackDev {
     width: 20%;
     opacity: 0;
-    animation: linksIn 2s ease forwards 4.5s;
+    animation: linksIn 2s ease forwards 1s;
   }
 
   @keyframes linksIn {
@@ -572,6 +608,17 @@ code {
   .appBGimage {
     width: 100%;
     height: 100%;
+    opacity: 0;
+    animation: BGopacity 8s ease forwards;
+  }
+
+  @keyframes BGopacity {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 
   .button-box {
