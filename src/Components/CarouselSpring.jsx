@@ -15,12 +15,13 @@ import fathackPNG from "../images/fathackPNG.png";
 import greenBG1 from "../images/greenBG1.png";
 import purpleClouds from "../images/purpleClouds.png";
 import parsley from "../images/parsley.jpg";
-import calcBG from "../images/calcBG.jpg";
+import swirls5 from "../images/swirls5.png";
 import clockBG from "../images/clockBG.jpg";
 import quotesBG from "../images/quotesBG.jpg";
 import drumBG from "../images/drumBG.jpg";
-import markdownBG from "../images/markdownBG.png";
-import cabbage from "../images/cabbage.jpg";
+import mountains from "../images/mountains.jpg";
+import cabbage2 from "../images/cabbage2.png";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 function CarouselSpring({
   nextProperty,
@@ -123,7 +124,7 @@ function CarouselSpring({
     }
   ];
 
-  const backgrounds = [drumBG, quotesBG, markdownBG, clockBG, calcBG, cabbage];
+  const backgrounds = [drumBG, quotesBG, mountains, clockBG, swirls5, cabbage2];
 
   useEffect(() => {
     window.addEventListener("keydown", handleKeyPress);
@@ -192,7 +193,11 @@ function CarouselSpring({
         className={show ? "carouselBGbox-fadeIn" : "carouselBGbox-fadeOut"}
         key={show}
       >
-        <img src={backgrounds[index]} className="appBGimage"></img>
+        <TransitionGroup component={null} exit={false}>
+          <CSSTransition timeout={500} key={backgrounds[index]}>
+            <img src={backgrounds[index]} className="appBGimage"></img>
+          </CSSTransition>
+        </TransitionGroup>
       </div>
       <div className="carouselBox">
         <Carousel

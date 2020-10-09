@@ -1,8 +1,8 @@
-import React from "react";
-
-export default function Name() {
+import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
+function Name(props) {
   return (
-    <div className="nameBox">
+    <div className={props.home.showLinks ? "nameBox" : "nameBox-fadeOut"}>
       <svg
         id="nameID"
         className="name"
@@ -294,3 +294,8 @@ export default function Name() {
     </div>
   );
 }
+const mapStateToProps = state => ({
+  home: state.home
+});
+
+export default connect(mapStateToProps, {})(Name);

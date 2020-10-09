@@ -14,6 +14,16 @@ import purpleClouds from "./images/purpleClouds.png";
 import Links from "./Components/Links.jsx";
 import { Provider } from "react-redux";
 import store from "./store";
+import { NavLink } from "reactstrap";
+import { NavLink as RRNavLink } from "react-router-dom";
+import {
+  BrowserRouter,
+  Route,
+  Link,
+  withRouter,
+  Switch
+} from "react-router-dom";
+import Skills from "./Components/Skills.jsx";
 
 function App(props) {
   const [linksDisplay, setLinksDisplay] = useState(true);
@@ -71,10 +81,12 @@ function App(props) {
 
   return (
     <Provider store={store}>
-      <div className="App">
-        <Skyline />
-      </div>{" "}
-      {/* end of app */}
+      <BrowserRouter>
+        <Route exact path="/" component={Skyline} />
+        <Route exact path="/skills" component={Skills} />
+
+        {/* end of app */}
+      </BrowserRouter>
     </Provider>
   );
 }

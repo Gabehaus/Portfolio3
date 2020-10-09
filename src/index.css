@@ -35,7 +35,7 @@ code {
     position: relative;
     width: 100%;
     height: 100vh;
-    background: black;
+    background: #0d0d0d;
     background-size: cover;
     background-repeat: no-repeat;
     display: grid;
@@ -99,7 +99,7 @@ code {
     background-image: url("https://freecodecampassets.s3.us-east-2.amazonaws.com/Portfolio+Assets+1/Apr11TapeBlue2.png");
     background-size: 100%;
     background-repeat: no-repeat;
-    filter: drop-shadow(-8px 8px 10px black);
+    filter: drop-shadow(-8px 8px 10px #0d0d0d);
     animation: opac 4s ease forwards 0s;
     transition: opacity 3s;
   }
@@ -127,7 +127,7 @@ code {
     background-image: url("https://freecodecampassets.s3.us-east-2.amazonaws.com/Portfolio+Assets+1/Apr11TapeBlue2.png");
     background-size: 100%;
     background-repeat: no-repeat;
-    filter: drop-shadow(-8px 8px 10px black);
+    filter: drop-shadow(-8px 8px 10px #0d0d0d);
     animation: opacOut 0.5s ease forwards 0s;
 
     /*transition: opacity 15s;*/
@@ -181,14 +181,30 @@ code {
     transition: opacity 0s;
   }
 
+  .linkButton {
+    color: #0d0d0d;
+    font-family: "Six Caps", sans-serif;
+    font-size: 60px;
+    border-style: none;
+    border-width: 1px;
+    align-self: center;
+    margin-top: 50%;
+    margin-left: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    animation: linksFontSize 0.5s ease forwards 4.55s;
+  }
+
   .link {
+    position: relative;
     color: #f0ebe9;
     font-family: "Six Caps", sans-serif;
     font-size: 60px;
     border-style: none;
     border-width: 1px;
-    width: 20%;
-
+    width: 10%;
+    margin-left: 70px;
+    margin-right: 70px;
     background: transparent;
     animation: linksFontSize 0.5s ease forwards 4.55s;
     -webkit-transition: all 0.3s ease-in-out;
@@ -229,7 +245,7 @@ code {
   }
 
   .blackLink {
-    color: black;
+    color: #0d0d0d;
   }
 
   .blackLink:hover {
@@ -314,7 +330,7 @@ code {
 
   .account-holder {
     width: 100px;
-    color: black;
+    color: #0d0d0d;
 
     background: transparent;
     font-size: 10px;
@@ -382,7 +398,7 @@ code {
       fill: transparent;
     }
     to {
-      fill: black;
+      fill: #0d0d0d;
     }
   }
 
@@ -392,6 +408,25 @@ code {
     height: 0vh;
     margin-top: 10vw;
     z-index: 1;
+  }
+
+  .nameBox-fadeOut {
+    width: 20vw;
+    margin-left: 25vw;
+    height: 0vh;
+    margin-top: 10vw;
+    z-index: 1;
+    animation: opacOut 0.5s ease forwards 0s;
+
+    /*transition: opacity 15s;*/
+  }
+  @keyframes opacOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
   }
 
   .name {
@@ -404,17 +439,39 @@ code {
 
   .fullStackDevBox {
     position: relative;
-    background: transparent;
+
     grid-row-start: 3;
     grid-row-end: 4;
-    grid-column-start: 1;
-    grid-column-end: 6;
-    z-index: 3;
+    width: 100vw;
+
     margin-top: 9vh;
+  }
+
+  .fullStackDevBox-fade-out {
+    position: relative;
+
+    grid-row-start: 3;
+    grid-row-end: 4;
+    width: 100vw;
+
+    margin-top: 9vh;
+    animation: opacOut 0.5s ease forwards 0s;
+
+    /*transition: opacity 15s;*/
+  }
+  @keyframes opacOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
   }
 
   .fullStackDev {
     width: 20%;
+    height: 100%;
+    margin-left: 40%;
     opacity: 0;
     animation: linksIn 2s ease forwards 1s;
   }
@@ -470,7 +527,7 @@ code {
   }
 
   .exit-button {
-    background: black;
+    background: #0d0d0d;
     color: white;
     border-radius: 3px;
     border-style: none;
@@ -490,13 +547,13 @@ code {
     border-radius: 2px;
     border-style: none;
     color: #989a9c;
+    margin-left: 7vw;
 
-    opacity: 0.5;
-    filter: drop-shadow(3px 3px 3px black);
+    filter: drop-shadow(3px 3px 3px #0d0d0d);
   }
 
   .next-button:hover {
-    opacity: 1;
+    color: #a9a9a9;
   }
 
   .prev-button {
@@ -505,13 +562,13 @@ code {
     border-radius: 2px;
     border-style: none;
     color: #989a9c;
+    margin-right: 7vw;
 
-    opacity: 0.5;
-    filter: drop-shadow(3px 3px 3px black);
+    filter: drop-shadow(3px 3px 3px #0d0d0d);
   }
 
   .prev-button:hover {
-    opacity: 1;
+    color: #a9a9a9;
   }
 
   .slides {
@@ -609,7 +666,7 @@ code {
     width: 100%;
     height: 100%;
     opacity: 0;
-    animation: BGopacity 8s ease forwards;
+    animation: BGopacity 2s ease forwards;
   }
 
   @keyframes BGopacity {
@@ -624,11 +681,11 @@ code {
   .button-box {
     grid-row-start: 7;
     grid-row-end: 8;
-    grid-column-start: 3;
-    grid-column-end: 6;
+    grid-column-start: 1;
+    grid-column-end: 9;
 
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     z-index: 15;
   }
 
@@ -650,7 +707,7 @@ code {
     font-size: 20px;
 
     color: white;
-    filter: drop-shadow(3px 3px 3px black);
+    filter: drop-shadow(3px 3px 3px #0d0d0d);
     text-align: center;
     opacity: 0;
     text-decoration: none;
@@ -669,7 +726,7 @@ code {
     font-family: "Montserrat", sans-serif;
     font-size: 40px;
     white-space: nowrap;
-    filter: drop-shadow(3px 3px 3px black);
+    filter: drop-shadow(3px 3px 3px #0d0d0d);
     text-align: center;
     color: #365bff;
     justify-content: center;
@@ -680,7 +737,7 @@ code {
     font-family: "Montserrat", sans-serif;
     font-size: 40px;
     white-space: nowrap;
-    filter: drop-shadow(3px 3px 3px black);
+    filter: drop-shadow(3px 3px 3px #0d0d0d);
     text-align: center;
     color: #365bff;
     justify-content: center;
@@ -694,7 +751,7 @@ code {
 
     margin-bottom: 1vh;
     color: white;
-    filter: drop-shadow(3px 3px 3px black);
+    filter: drop-shadow(3px 3px 3px #0d0d0d);
     text-align: center;
     opacity: 0;
     text-decoration: none;
@@ -768,13 +825,624 @@ code {
   .carouselBox2 {
     display: none;
   }
+
+  /* Skills Page */
+  .skillsBox {
+    position: absolute;
+    background: lightblue;
+    color: yellow;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .logo1box {
+    position: absolute;
+
+    width: 50px;
+    height: 50px;
+    top: 20vh;
+    left: 10vw;
+  }
+
+  .logo2box {
+    position: absolute;
+
+    width: 50px;
+    height: 50px;
+    top: 20vh;
+    left: 10vw;
+  }
+
+  .logo3box {
+    position: absolute;
+
+    width: 50px;
+    height: 50px;
+    top: 20vh;
+    left: 10vw;
+  }
+
+  .logo4box {
+    position: absolute;
+
+    width: 50px;
+    height: 50px;
+    top: 20vh;
+    left: 10vw;
+  }
+
+  .logo5box {
+    position: absolute;
+
+    width: 50px;
+    height: 50px;
+    top: 20vh;
+    left: 10vw;
+  }
+
+  .logo6box {
+    position: absolute;
+
+    width: 50px;
+    height: 50px;
+    top: 20vh;
+    left: 10vw;
+  }
+
+  .logo7box {
+    position: absolute;
+
+    width: 50px;
+    height: 50px;
+    top: 20vh;
+    left: 10vw;
+  }
+
+  .logo8box {
+    position: absolute;
+    background: transparent;
+    width: 50px;
+    height: 50px;
+    top: 20vh;
+    left: 10vw;
+  }
+
+  .rotateLogo1 {
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    /* 
+     * Make the initial position to be the center of the circle you want this
+     * object follow.
+     */
+    position: absolute;
+    left: 0px;
+    top: 0px;
+
+    /*
+     * Sets up the animation duration, timing-function (or easing)
+     * and iteration-count. Ensure you use the appropriate vendor-specific 
+     * prefixes as well as the official syntax for now. Remember, tools like 
+     * CSS Please are your friends!
+     */
+    -webkit-animation: myOrbit 4s linear infinite; /* Chrome, Safari 5 */
+    -moz-animation: myOrbit 4s linear infinite; /* Firefox 5-15 */
+    -o-animation: myOrbit 4s linear infinite; /* Opera 12+ */
+    animation: myOrbit 4s linear infinite; /* Chrome, Firefox 16+, 
+                                                      IE 10+, Safari 5 */
+  }
+
+  /*
+ * Set up the keyframes to actually describe the begining and end states of 
+ * the animation.  The browser will interpolate all the frames between these 
+ * points.  Again, remember your vendor-specific prefixes for now!
+ */
+  @-webkit-keyframes myOrbit {
+    from {
+      -webkit-transform: rotate(0deg) translateX(150px) rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg) translateX(150px) rotate(-360deg);
+    }
+  }
+
+  @-moz-keyframes myOrbit {
+    from {
+      -moz-transform: rotate(0deg) translateX(150px) rotate(0deg);
+    }
+    to {
+      -moz-transform: rotate(360deg) translateX(150px) rotate(-360deg);
+    }
+  }
+
+  @-o-keyframes myOrbit {
+    from {
+      -o-transform: rotate(0deg) translateX(150px) rotate(0deg);
+    }
+    to {
+      -o-transform: rotate(360deg) translateX(150px) rotate(-360deg);
+    }
+  }
+
+  @keyframes myOrbit {
+    from {
+      transform: rotate(0deg) translateX(150px) rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg) translateX(150px) rotate(-360deg);
+    }
+  }
+
+  .rotateLogo2 {
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    /* 
+     * Make the initial position to be the center of the circle you want this
+     * object follow.
+     */
+    position: absolute;
+    left: 0px;
+    top: 0px;
+
+    /*
+     * Sets up the animation duration, timing-function (or easing)
+     * and iteration-count. Ensure you use the appropriate vendor-specific 
+     * prefixes as well as the official syntax for now. Remember, tools like 
+     * CSS Please are your friends!
+     */
+    -webkit-animation: myOrbit2 4s linear infinite; /* Chrome, Safari 5 */
+    -moz-animation: myOrbit2 4s linear infinite; /* Firefox 5-15 */
+    -o-animation: myOrbit2 4s linear infinite; /* Opera 12+ */
+    animation: myOrbit2 4s linear infinite; /* Chrome, Firefox 16+, 
+                                                      IE 10+, Safari 5 */
+  }
+
+  /*
+ * Set up the keyframes to actually describe the begining and end states of 
+ * the animation.  The browser will interpolate all the frames between these 
+ * points.  Again, remember your vendor-specific prefixes for now!
+ */
+  @-webkit-keyframes myOrbit2 {
+    from {
+      -webkit-transform: rotate(0deg) translateX(-150px) rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg) translateX(-150px) rotate(-360deg);
+    }
+  }
+
+  @-moz-keyframes myOrbit2 {
+    from {
+      -moz-transform: rotate(0deg) translateX(-150px) rotate(0deg);
+    }
+    to {
+      -moz-transform: rotate(360deg) translateX(-150px) rotate(-360deg);
+    }
+  }
+
+  @-o-keyframes myOrbit2 {
+    from {
+      -o-transform: rotate(0deg) translateX(-150px) rotate(0deg);
+    }
+    to {
+      -o-transform: rotate(360deg) translateX(-150px) rotate(-360deg);
+    }
+  }
+
+  @keyframes myOrbit2 {
+    from {
+      transform: rotate(0deg) translateX(-150px) rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg) translateX(-150px) rotate(-360deg);
+    }
+  }
+
+  .rotateLogo3 {
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    /* 
+     * Make the initial position to be the center of the circle you want this
+     * object follow.
+     */
+    position: absolute;
+    left: 0px;
+    top: 0px;
+
+    /*
+     * Sets up the animation duration, timing-function (or easing)
+     * and iteration-count. Ensure you use the appropriate vendor-specific 
+     * prefixes as well as the official syntax for now. Remember, tools like 
+     * CSS Please are your friends!
+     */
+    -webkit-animation: myOrbit3 4s linear infinite; /* Chrome, Safari 5 */
+    -moz-animation: myOrbit3 4s linear infinite; /* Firefox 5-15 */
+    -o-animation: myOrbit3 4s linear infinite; /* Opera 12+ */
+    animation: myOrbit3 4s linear infinite; /* Chrome, Firefox 16+, 
+                                                      IE 10+, Safari 5 */
+  }
+
+  /*
+ * Set up the keyframes to actually describe the begining and end states of 
+ * the animation.  The browser will interpolate all the frames between these 
+ * points.  Again, remember your vendor-specific prefixes for now!
+ */
+  @-webkit-keyframes myOrbit3 {
+    from {
+      -webkit-transform: rotate(0deg) translate(106px, 106px) rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg) translate(106px, 106px) rotate(-360deg);
+    }
+  }
+
+  @-moz-keyframes myOrbit3 {
+    from {
+      -moz-transform: rotate(0deg) translate(106px, 106px) rotate(0deg);
+    }
+    to {
+      -moz-transform: rotate(360deg) translate(106px, 106px) rotate(-360deg);
+    }
+  }
+
+  @-o-keyframes myOrbit3 {
+    from {
+      -o-transform: rotate(0deg) translate(106px, 106px) rotate(0deg);
+    }
+    to {
+      -o-transform: rotate(360deg) translate(106px, 106px) rotate(-360deg);
+    }
+  }
+
+  @keyframes myOrbit3 {
+    from {
+      transform: rotate(0deg) translate(106px, 106px) rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg) translate(106px, 106px) rotate(-360deg);
+    }
+  }
+
+  .rotateLogo4 {
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    /* 
+     * Make the initial position to be the center of the circle you want this
+     * object follow.
+     */
+    position: absolute;
+    left: 0px;
+    top: 0px;
+
+    /*
+     * Sets up the animation duration, timing-function (or easing)
+     * and iteration-count. Ensure you use the appropriate vendor-specific 
+     * prefixes as well as the official syntax for now. Remember, tools like 
+     * CSS Please are your friends!
+     */
+    -webkit-animation: myOrbit4 4s linear infinite; /* Chrome, Safari 5 */
+    -moz-animation: myOrbit4 4s linear infinite; /* Firefox 5-15 */
+    -o-animation: myOrbit4 4s linear infinite; /* Opera 12+ */
+    animation: myOrbit4 4s linear infinite; /* Chrome, Firefox 16+, 
+                                                      IE 10+, Safari 5 */
+  }
+
+  /*
+ * Set up the keyframes to actually describe the begining and end states of 
+ * the animation.  The browser will interpolate all the frames between these 
+ * points.  Again, remember your vendor-specific prefixes for now!
+ */
+  @-webkit-keyframes myOrbit4 {
+    from {
+      -webkit-transform: rotate(0deg) translate(-106px, -106px) rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg) translate(-106px, -106px)
+        rotate(-360deg);
+    }
+  }
+
+  @-moz-keyframes myOrbit4 {
+    from {
+      -moz-transform: rotate(0deg) translate(-106px, -106px) rotate(0deg);
+    }
+    to {
+      -moz-transform: rotate(360deg) translate(-106px, -106px) rotate(-360deg);
+    }
+  }
+
+  @-o-keyframes myOrbit4 {
+    from {
+      -o-transform: rotate(0deg) translate(-106px, -106px) rotate(0deg);
+    }
+    to {
+      -o-transform: rotate(360deg) translate(-106px, -106px) rotate(-360deg);
+    }
+  }
+
+  @keyframes myOrbit4 {
+    from {
+      transform: rotate(0deg) translate(-106px, -106px) rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg) translate(-106px, -106px) rotate(-360deg);
+    }
+  }
+
+  .rotateLogo5 {
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    /* 
+     * Make the initial position to be the center of the circle you want this
+     * object follow.
+     */
+    position: absolute;
+    left: 0px;
+    top: 0px;
+
+    /*
+     * Sets up the animation duration, timing-function (or easing)
+     * and iteration-count. Ensure you use the appropriate vendor-specific 
+     * prefixes as well as the official syntax for now. Remember, tools like 
+     * CSS Please are your friends!
+     */
+    -webkit-animation: myOrbit5 4s linear infinite; /* Chrome, Safari 5 */
+    -moz-animation: myOrbit5 4s linear infinite; /* Firefox 5-15 */
+    -o-animation: myOrbit5 4s linear infinite; /* Opera 12+ */
+    animation: myOrbit5 4s linear infinite; /* Chrome, Firefox 16+, 
+                                                      IE 10+, Safari 5 */
+  }
+
+  /*
+ * Set up the keyframes to actually describe the begining and end states of 
+ * the animation.  The browser will interpolate all the frames between these 
+ * points.  Again, remember your vendor-specific prefixes for now!
+ */
+  @-webkit-keyframes myOrbit5 {
+    from {
+      -webkit-transform: rotate(0deg) translateY(150px) rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg) translateY(150px) rotate(-360deg);
+    }
+  }
+
+  @-moz-keyframes myOrbit5 {
+    from {
+      -moz-transform: rotate(0deg) translateY(150px) rotate(0deg);
+    }
+    to {
+      -moz-transform: rotate(360deg) translateY(150px) rotate(-360deg);
+    }
+  }
+
+  @-o-keyframes myOrbit5 {
+    from {
+      -o-transform: rotate(0deg) translateY(150px) rotate(0deg);
+    }
+    to {
+      -o-transform: rotate(360deg) translateY(150px) rotate(-360deg);
+    }
+  }
+
+  @keyframes myOrbit5 {
+    from {
+      transform: rotate(0deg) translateY(150px) rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg) translateY(150px) rotate(-360deg);
+    }
+  }
+
+  .rotateLogo6 {
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    /* 
+     * Make the initial position to be the center of the circle you want this
+     * object follow.
+     */
+    position: absolute;
+    left: 0px;
+    top: 0px;
+
+    /*
+     * Sets up the animation duration, timing-function (or easing)
+     * and iteration-count. Ensure you use the appropriate vendor-specific 
+     * prefixes as well as the official syntax for now. Remember, tools like 
+     * CSS Please are your friends!
+     */
+    -webkit-animation: myOrbit6 4s linear infinite; /* Chrome, Safari 5 */
+    -moz-animation: myOrbit6 4s linear infinite; /* Firefox 5-15 */
+    -o-animation: myOrbit6 4s linear infinite; /* Opera 12+ */
+    animation: myOrbit6 4s linear infinite; /* Chrome, Firefox 16+, 
+                                                      IE 10+, Safari 5 */
+  }
+
+  /*
+ * Set up the keyframes to actually describe the begining and end states of 
+ * the animation.  The browser will interpolate all the frames between these 
+ * points.  Again, remember your vendor-specific prefixes for now!
+ */
+  @-webkit-keyframes myOrbit6 {
+    from {
+      -webkit-transform: rotate(0deg) translate(-106px, 106px) rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg) translate(-106px, 106px) rotate(-360deg);
+    }
+  }
+
+  @-moz-keyframes myOrbit6 {
+    from {
+      -moz-transform: rotate(0deg) translate(-106px, 106px) rotate(0deg);
+    }
+    to {
+      -moz-transform: rotate(360deg) translate(-106px, 106px) rotate(-360deg);
+    }
+  }
+
+  @-o-keyframes myOrbit6 {
+    from {
+      -o-transform: rotate(0deg) translate(-106px, 106px) rotate(0deg);
+    }
+    to {
+      -o-transform: rotate(360deg) translate(-106px, 106px) rotate(-360deg);
+    }
+  }
+
+  @keyframes myOrbit6 {
+    from {
+      transform: rotate(0deg) translate(-106px, 106px) rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg) translate(-106px, 106px) rotate(-360deg);
+    }
+  }
+
+  .rotateLogo7 {
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    /* 
+     * Make the initial position to be the center of the circle you want this
+     * object follow.
+     */
+    position: absolute;
+    left: 0px;
+    top: 0px;
+
+    /*
+     * Sets up the animation duration, timing-function (or easing)
+     * and iteration-count. Ensure you use the appropriate vendor-specific 
+     * prefixes as well as the official syntax for now. Remember, tools like 
+     * CSS Please are your friends!
+     */
+    -webkit-animation: myOrbit7 4s linear infinite; /* Chrome, Safari 5 */
+    -moz-animation: myOrbit7 4s linear infinite; /* Firefox 5-15 */
+    -o-animation: myOrbit7 4s linear infinite; /* Opera 12+ */
+    animation: myOrbit7 4s linear infinite; /* Chrome, Firefox 16+, 
+                                                      IE 10+, Safari 5 */
+  }
+
+  /*
+ * Set up the keyframes to actually describe the begining and end states of 
+ * the animation.  The browser will interpolate all the frames between these 
+ * points.  Again, remember your vendor-specific prefixes for now!
+ */
+  @-webkit-keyframes myOrbit7 {
+    from {
+      -webkit-transform: rotate(0deg) translate(0px, -150px) rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg) translate(0px, -150px) rotate(-360deg);
+    }
+  }
+
+  @-moz-keyframes myOrbit7 {
+    from {
+      -moz-transform: rotate(0deg) translate(0px, -150px) rotate(0deg);
+    }
+    to {
+      -moz-transform: rotate(360deg) rotate(0deg) translate(0px, -150px)
+        rotate(-360deg);
+    }
+  }
+
+  @-o-keyframes myOrbit7 {
+    from {
+      -o-transform: rotate(0deg) translate(0px, -150px) rotate(0deg);
+    }
+    to {
+      -o-transform: rotate(360deg) translate(0px, -150px) rotate(-360deg);
+    }
+  }
+
+  @keyframes myOrbit7 {
+    from {
+      transform: rotate(0deg) translate(0px, -150px) rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg) translate(0px, -150px) rotate(-360deg);
+    }
+  }
+
+  .rotateLogo8 {
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    /* 
+     * Make the initial position to be the center of the circle you want this
+     * object follow.
+     */
+    position: absolute;
+    left: 0px;
+    top: 0px;
+
+    /*
+     * Sets up the animation duration, timing-function (or easing)
+     * and iteration-count. Ensure you use the appropriate vendor-specific 
+     * prefixes as well as the official syntax for now. Remember, tools like 
+     * CSS Please are your friends!
+     */
+    -webkit-animation: myOrbit8 4s linear infinite; /* Chrome, Safari 5 */
+    -moz-animation: myOrbit8 4s linear infinite; /* Firefox 5-15 */
+    -o-animation: myOrbit8 4s linear infinite; /* Opera 12+ */
+    animation: myOrbit8 4s linear infinite; /* Chrome, Firefox 16+, 
+                                                      IE 10+, Safari 5 */
+  }
+
+  /*
+ * Set up the keyframes to actually describe the begining and end states of 
+ * the animation.  The browser will interpolate all the frames between these 
+ * points.  Again, remember your vendor-specific prefixes for now!
+ */
+  @-webkit-keyframes myOrbit8 {
+    from {
+      -webkit-transform: rotate(0deg) translate(106px, -106px) rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg) translate(106px, -106px) rotate(-360deg);
+    }
+  }
+
+  @-moz-keyframes myOrbit8 {
+    from {
+      -moz-transform: rotate(0deg) translate(106px, -106px) rotate(0deg);
+    }
+    to {
+      -moz-transform: rotate(360deg) translate(106px, -106px) rotate(-360deg);
+    }
+  }
+
+  @-o-keyframes myOrbit8 {
+    from {
+      -o-transform: rotate(0deg) translate(106px, -106px) rotate(0deg);
+    }
+    to {
+      -o-transform: rotate(360deg) translate(106px, -106px) rotate(-360deg);
+    }
+  }
+
+  @keyframes myOrbit8 {
+    from {
+      transform: rotate(0deg) translate(106px, -106px) rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg) translate(106px, -106px) rotate(-360deg);
+    }
+  }
 }
 
 @media (max-width: 1100px) {
   .carouselBox {
     width: 180%;
     margin-left: -40%;
-    background: black;
+    background: #0d0d0d;
   }
 
   .skyline {
@@ -830,7 +1498,7 @@ code {
     font-size: 20px;
 
     color: white;
-    filter: drop-shadow(3px 3px 3px black);
+    filter: drop-shadow(3px 3px 3px #0d0d0d);
     text-align: center;
     opacity: 0;
     text-decoration: none;

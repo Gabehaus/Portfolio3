@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { showLinks, showPort, showAccounts } from "../actions/homeActions.js";
-
+import node from "../images/node.png";
+import html from "../images/html.png";
+import css from "../images/css.png";
+import bootstrap from "../images/bootstrap.png";
+import reactLogo from "../images/reactLogo.png";
+import mongoDB from "../images/mongoDB.png";
+import express from "../images/express.png";
+import vueLogo from "../images/vueLogo.png";
 import CarouselSpring from "./CarouselSpring";
 import purpleClouds from "../images/purpleClouds.png";
 import Links from "./Links.jsx";
@@ -82,8 +89,38 @@ function Skyline(props) {
         />
       </div>
       {/* End of projects modal */}
+      <div className="skillsBox">
+        <div className="logo1box">
+          <img src={node} className="rotateLogo1"></img>
+        </div>
+        <div className="logo2box">
+          <img src={html} className="rotateLogo2"></img>
+        </div>
+        <div className="logo3box">
+          <img src={css} className="rotateLogo3"></img>
+        </div>
+        <div className="logo4box">
+          <img src={bootstrap} className="rotateLogo4"></img>
+        </div>
+        <div className="logo5box">
+          <img src={reactLogo} className="rotateLogo5"></img>
+        </div>
+        <div className="logo6box">
+          <img src={mongoDB} className="rotateLogo6"></img>
+        </div>
+        <div className="logo7box">
+          <img src={express} className="rotateLogo7"></img>
+        </div>
+        <div className="logo8box">
+          <img src={vueLogo} className="rotateLogo8"></img>
+        </div>
+      </div>
       <Name />
-      <div className="fullStackDevBox">
+      <div
+        className={
+          props.home.showLinks ? "fullStackDevBox" : "fullStackDevBox-fade-out"
+        }
+      >
         <img src={fullStackDev} className="fullStackDev"></img>
       </div>
       <NavLinks />

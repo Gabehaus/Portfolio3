@@ -1,6 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
 import { showLinks, showPort, showAccounts } from "../actions/homeActions.js";
+import { NavLink } from "reactstrap";
+
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 function NavLinks(props) {
   return (
@@ -8,19 +11,31 @@ function NavLinks(props) {
       className={props.home.showLinks ? "fade-links-in" : "fade-links-out"}
       id="link-wrapper"
     >
-      <button
-        className="link coloredLink"
-        onClick={() => {
-          props.showLinks();
-          props.showPort();
-          props.showAccounts();
-        }}
-      >
-        PROJECTS
-      </button>
-      <button className="link blackLink ">SKILLS</button>
-      <button className="link blackLink">CONTACT</button>
-      <button className="link coloredLink">RESUME</button>
+      <Link to="/" className="link ">
+        <button
+          className="linkButton coloredLink"
+          onClick={() => {
+            props.showLinks();
+            props.showPort();
+            props.showAccounts();
+          }}
+        >
+          PROJECTS
+        </button>
+      </Link>
+
+      <Link to="/skills" className="link ">
+        {" "}
+        <button href="/skills" className="linkButton blackLink ">
+          SKILLS
+        </button>
+      </Link>
+      <Link to="/skills" className="link  ">
+        <button className="linkButton blackLink">CONTACT</button>
+      </Link>
+      <Link to="/skills" className="link ">
+        <button className="linkButton coloredLink">RESUME</button>
+      </Link>
     </ul>
   );
 }
