@@ -831,8 +831,8 @@ code {
     position: absolute;
     background: lightblue;
     color: yellow;
-    height: 100vh;
-    width: 100vw;
+    height: 50vh;
+    width: 50vw;
   }
 
   .logo1box {
@@ -909,6 +909,7 @@ code {
 
   .rotateLogo1 {
     background: transparent;
+
     width: 100%;
     height: 100%;
     /* 
@@ -925,10 +926,10 @@ code {
      * prefixes as well as the official syntax for now. Remember, tools like 
      * CSS Please are your friends!
      */
-    -webkit-animation: myOrbit 4s linear infinite; /* Chrome, Safari 5 */
-    -moz-animation: myOrbit 4s linear infinite; /* Firefox 5-15 */
-    -o-animation: myOrbit 4s linear infinite; /* Opera 12+ */
-    animation: myOrbit 4s linear infinite; /* Chrome, Firefox 16+, 
+    -webkit-animation: myOrbit 16s linear infinite; /* Chrome, Safari 5 */
+    -moz-animation: myOrbit 16s linear infinite; /* Firefox 5-15 */
+    -o-animation: myOrbit 16s linear infinite; /* Opera 12+ */
+    animation: myOrbit 16s linear infinite; /* Chrome, Firefox 16+, 
                                                       IE 10+, Safari 5 */
   }
 
@@ -965,10 +966,16 @@ code {
   }
 
   @keyframes myOrbit {
-    from {
-      transform: rotate(0deg) translateX(150px) rotate(0deg);
+    0% {
+      transform: rotate(0deg) translateX(150px) rotate(0deg) scale(1);
     }
-    to {
+    25% {
+      transform: rotate(90deg) translateX(150px) rotate(-90deg) scale(2);
+    }
+    50% {
+      transform: rotate(180deg) translateX(150px) rotate(-180deg) scale(1);
+    }
+    100% {
       transform: rotate(360deg) translateX(150px) rotate(-360deg);
     }
   }
@@ -991,10 +998,10 @@ code {
      * prefixes as well as the official syntax for now. Remember, tools like 
      * CSS Please are your friends!
      */
-    -webkit-animation: myOrbit2 4s linear infinite; /* Chrome, Safari 5 */
-    -moz-animation: myOrbit2 4s linear infinite; /* Firefox 5-15 */
-    -o-animation: myOrbit2 4s linear infinite; /* Opera 12+ */
-    animation: myOrbit2 4s linear infinite; /* Chrome, Firefox 16+, 
+    -webkit-animation: myOrbit2 16s linear infinite; /* Chrome, Safari 5 */
+    -moz-animation: myOrbit2 16s linear infinite; /* Firefox 5-15 */
+    -o-animation: myOrbit2 16s linear infinite; /* Opera 12+ */
+    animation: myOrbit2 16s linear infinite; /* Chrome, Firefox 16+, 
                                                       IE 10+, Safari 5 */
   }
 
@@ -1031,11 +1038,18 @@ code {
   }
 
   @keyframes myOrbit2 {
-    from {
+    0% {
       transform: rotate(0deg) translateX(-150px) rotate(0deg);
     }
-    to {
-      transform: rotate(360deg) translateX(-150px) rotate(-360deg);
+
+    50% {
+      transform: rotate(180deg) translateX(-150px) rotate(-180deg) scale(1);
+    }
+    75% {
+      transform: rotate(270deg) translateX(-150px) rotate(-270deg) scale(2);
+    }
+    100% {
+      transform: rotate(360deg) translateX(-150px) rotate(-360deg) scale(1);
     }
   }
 
@@ -1057,10 +1071,10 @@ code {
      * prefixes as well as the official syntax for now. Remember, tools like 
      * CSS Please are your friends!
      */
-    -webkit-animation: myOrbit3 4s linear infinite; /* Chrome, Safari 5 */
-    -moz-animation: myOrbit3 4s linear infinite; /* Firefox 5-15 */
-    -o-animation: myOrbit3 4s linear infinite; /* Opera 12+ */
-    animation: myOrbit3 4s linear infinite; /* Chrome, Firefox 16+, 
+    -webkit-animation: myOrbit3 16s linear infinite; /* Chrome, Safari 5 */
+    -moz-animation: myOrbit3 16s linear infinite; /* Firefox 5-15 */
+    -o-animation: myOrbit3 16s linear infinite; /* Opera 12+ */
+    animation: myOrbit3 16s linear infinite; /* Chrome, Firefox 16+, 
                                                       IE 10+, Safari 5 */
   }
 
@@ -1097,11 +1111,21 @@ code {
   }
 
   @keyframes myOrbit3 {
-    from {
-      transform: rotate(0deg) translate(106px, 106px) rotate(0deg);
+    0% {
+      transform: rotate(0deg) translate(106px, 106px) rotate(0deg) scale(1.5);
     }
-    to {
-      transform: rotate(360deg) translate(106px, 106px) rotate(-360deg);
+    12.5% {
+      transform: rotate(45deg) translate(106px, 106px) rotate(-45deg) scale(2);
+    }
+    37.5% {
+      transform: rotate(135deg) translate(106px, 106px) rotate(-135deg) scale(1);
+    }
+    87.5% {
+      transform: rotate(315deg) translate(106px, 106px) rotate(-315deg) scale(1);
+    }
+    100% {
+      transform: rotate(360deg) translate(106px, 106px) rotate(-360deg)
+        scale(1.5);
     }
   }
 
@@ -1123,10 +1147,10 @@ code {
      * prefixes as well as the official syntax for now. Remember, tools like 
      * CSS Please are your friends!
      */
-    -webkit-animation: myOrbit4 4s linear infinite; /* Chrome, Safari 5 */
-    -moz-animation: myOrbit4 4s linear infinite; /* Firefox 5-15 */
-    -o-animation: myOrbit4 4s linear infinite; /* Opera 12+ */
-    animation: myOrbit4 4s linear infinite; /* Chrome, Firefox 16+, 
+    -webkit-animation: myOrbit4 16s linear infinite; /* Chrome, Safari 5 */
+    -moz-animation: myOrbit4 16s linear infinite; /* Firefox 5-15 */
+    -o-animation: myOrbit4 16s linear infinite; /* Opera 12+ */
+    animation: myOrbit4 16s linear infinite; /* Chrome, Firefox 16+, 
                                                       IE 10+, Safari 5 */
   }
 
@@ -1164,10 +1188,22 @@ code {
   }
 
   @keyframes myOrbit4 {
-    from {
+    0% {
       transform: rotate(0deg) translate(-106px, -106px) rotate(0deg);
     }
-    to {
+    37.5% {
+      transform: rotate(135deg) translate(-106px, -106px) rotate(-135deg)
+        scale(1);
+    }
+    62.5% {
+      transform: rotate(225deg) translate(-106px, -106px) rotate(-225deg)
+        scale(2);
+    }
+    87.5% {
+      transform: rotate(315deg) translate(-106px, -106px) rotate(-315deg)
+        scale(1);
+    }
+    100% {
       transform: rotate(360deg) translate(-106px, -106px) rotate(-360deg);
     }
   }
@@ -1190,10 +1226,10 @@ code {
      * prefixes as well as the official syntax for now. Remember, tools like 
      * CSS Please are your friends!
      */
-    -webkit-animation: myOrbit5 4s linear infinite; /* Chrome, Safari 5 */
-    -moz-animation: myOrbit5 4s linear infinite; /* Firefox 5-15 */
-    -o-animation: myOrbit5 4s linear infinite; /* Opera 12+ */
-    animation: myOrbit5 4s linear infinite; /* Chrome, Firefox 16+, 
+    -webkit-animation: myOrbit5 16s linear infinite; /* Chrome, Safari 5 */
+    -moz-animation: myOrbit5 16s linear infinite; /* Firefox 5-15 */
+    -o-animation: myOrbit5 16s linear infinite; /* Opera 12+ */
+    animation: myOrbit5 16s linear infinite; /* Chrome, Firefox 16+, 
                                                       IE 10+, Safari 5 */
   }
 
@@ -1230,11 +1266,17 @@ code {
   }
 
   @keyframes myOrbit5 {
-    from {
-      transform: rotate(0deg) translateY(150px) rotate(0deg);
+    0% {
+      transform: rotate(0deg) translateY(150px) rotate(0deg) scale(2);
     }
-    to {
-      transform: rotate(360deg) translateY(150px) rotate(-360deg);
+    25% {
+      transform: rotate(90deg) translateY(150px) rotate(-90deg) scale(1);
+    }
+    75% {
+      transform: rotate(270deg) translateY(150px) rotate(-270deg) scale(1);
+    }
+    100% {
+      transform: rotate(360deg) translateY(150px) rotate(-360deg) scale(2);
     }
   }
 
@@ -1256,10 +1298,10 @@ code {
      * prefixes as well as the official syntax for now. Remember, tools like 
      * CSS Please are your friends!
      */
-    -webkit-animation: myOrbit6 4s linear infinite; /* Chrome, Safari 5 */
-    -moz-animation: myOrbit6 4s linear infinite; /* Firefox 5-15 */
-    -o-animation: myOrbit6 4s linear infinite; /* Opera 12+ */
-    animation: myOrbit6 4s linear infinite; /* Chrome, Firefox 16+, 
+    -webkit-animation: myOrbit6 16s linear infinite; /* Chrome, Safari 5 */
+    -moz-animation: myOrbit6 16s linear infinite; /* Firefox 5-15 */
+    -o-animation: myOrbit6 16s linear infinite; /* Opera 12+ */
+    animation: myOrbit6 16s linear infinite; /* Chrome, Firefox 16+, 
                                                       IE 10+, Safari 5 */
   }
 
@@ -1296,11 +1338,23 @@ code {
   }
 
   @keyframes myOrbit6 {
-    from {
-      transform: rotate(0deg) translate(-106px, 106px) rotate(0deg);
+    0% {
+      transform: rotate(0deg) translate(-106px, 106px) rotate(0deg) scale(1.5);
     }
-    to {
-      transform: rotate(360deg) translate(-106px, 106px) rotate(-360deg);
+    12.5% {
+      transform: rotate(45deg) translate(-106px, 106px) rotate(-45deg) scale(1);
+    }
+    62.5% {
+      transform: rotate(225deg) translate(-106px, 106px) rotate(-225deg)
+        scale(1);
+    }
+    87.5% {
+      transform: rotate(315deg) translate(-106px, 106px) rotate(-315deg)
+        scale(2);
+    }
+    100% {
+      transform: rotate(360deg) translate(-106px, 106px) rotate(-360deg)
+        scale(1.5);
     }
   }
 
@@ -1322,10 +1376,10 @@ code {
      * prefixes as well as the official syntax for now. Remember, tools like 
      * CSS Please are your friends!
      */
-    -webkit-animation: myOrbit7 4s linear infinite; /* Chrome, Safari 5 */
-    -moz-animation: myOrbit7 4s linear infinite; /* Firefox 5-15 */
-    -o-animation: myOrbit7 4s linear infinite; /* Opera 12+ */
-    animation: myOrbit7 4s linear infinite; /* Chrome, Firefox 16+, 
+    -webkit-animation: myOrbit7 16s linear infinite; /* Chrome, Safari 5 */
+    -moz-animation: myOrbit7 16s linear infinite; /* Firefox 5-15 */
+    -o-animation: myOrbit7 16s linear infinite; /* Opera 12+ */
+    animation: myOrbit7 16s linear infinite; /* Chrome, Firefox 16+, 
                                                       IE 10+, Safari 5 */
   }
 
@@ -1363,11 +1417,20 @@ code {
   }
 
   @keyframes myOrbit7 {
-    from {
-      transform: rotate(0deg) translate(0px, -150px) rotate(0deg);
+    0% {
+      transform: rotate(0deg) translate(0px, -150px) rotate(0deg) scale(1);
     }
-    to {
-      transform: rotate(360deg) translate(0px, -150px) rotate(-360deg);
+    25% {
+      transform: rotate(90deg) translate(0px, -150px) rotate(-90deg) scale(1);
+    }
+    50% {
+      transform: rotate(180deg) translate(0px, -150px) rotate(-180deg) scale(2);
+    }
+    75% {
+      transform: rotate(270deg) translate(0px, -150px) rotate(-270deg) scale(1);
+    }
+    100% {
+      transform: rotate(360deg) translate(0px, -150px) rotate(-360deg) scale(1);
     }
   }
 
@@ -1389,10 +1452,10 @@ code {
      * prefixes as well as the official syntax for now. Remember, tools like 
      * CSS Please are your friends!
      */
-    -webkit-animation: myOrbit8 4s linear infinite; /* Chrome, Safari 5 */
-    -moz-animation: myOrbit8 4s linear infinite; /* Firefox 5-15 */
-    -o-animation: myOrbit8 4s linear infinite; /* Opera 12+ */
-    animation: myOrbit8 4s linear infinite; /* Chrome, Firefox 16+, 
+    -webkit-animation: myOrbit8 16s linear infinite; /* Chrome, Safari 5 */
+    -moz-animation: myOrbit8 16s linear infinite; /* Firefox 5-15 */
+    -o-animation: myOrbit8 16s linear infinite; /* Opera 12+ */
+    animation: myOrbit8 16s linear infinite; /* Chrome, Firefox 16+, 
                                                       IE 10+, Safari 5 */
   }
 
@@ -1429,10 +1492,21 @@ code {
   }
 
   @keyframes myOrbit8 {
-    from {
+    0% {
       transform: rotate(0deg) translate(106px, -106px) rotate(0deg);
     }
-    to {
+    12.5% {
+      transform: rotate(45deg) translate(106px, -106px) rotate(-45deg) scale(1);
+    }
+    37.5% {
+      transform: rotate(135deg) translate(106px, -106px) rotate(-135deg)
+        scale(2);
+    }
+    62.5% {
+      transform: rotate(225deg) translate(106px, -106px) rotate(-225deg)
+        scale(1);
+    }
+    100% {
       transform: rotate(360deg) translate(106px, -106px) rotate(-360deg);
     }
   }
