@@ -1,6 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
-import { showLinks, showPort, showAccounts } from "../actions/homeActions.js";
+import {
+  showLinks,
+  showPort,
+  showAccounts,
+  showName,
+  showWheel
+} from "../actions/homeActions.js";
 import { NavLink } from "reactstrap";
 
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
@@ -13,28 +19,62 @@ function NavLinks(props) {
     >
       <Link to="/" className="link ">
         <button
-          className="linkButton coloredLink"
+          className={
+            !props.home.showWheel
+              ? "linkButton coloredLink"
+              : "linkButton greyColoredLink"
+          }
           onClick={() => {
             props.showLinks();
             props.showPort();
             props.showAccounts();
+            props.showName();
           }}
         >
           PROJECTS
         </button>
       </Link>
 
-      <Link to="/skills" className="link ">
+      <div to="/skills" className="link ">
         {" "}
-        <button href="/skills" className="linkButton blackLink ">
+        <button
+          href="/skills"
+          className={
+            !props.home.showWheel
+              ? "linkButton blackLink"
+              : "linkButton greyBlackLink"
+          }
+          onClick={() => {
+            props.showWheel();
+            props.setIndexBrand(0);
+
+            props.showName();
+          }}
+        >
           SKILLS
         </button>
-      </Link>
+      </div>
       <Link to="/skills" className="link  ">
-        <button className="linkButton blackLink">CONTACT</button>
+        <button
+          className={
+            !props.home.showWheel
+              ? "linkButton blackLink"
+              : "linkButton greyBlackLink"
+          }
+        >
+          CONTACT
+        </button>
       </Link>
       <Link to="/skills" className="link ">
-        <button className="linkButton coloredLink">RESUME</button>
+        <button
+          className={
+            !props.home.showWheel
+              ? "linkButton coloredLink"
+              : "linkButton greyColoredLink"
+          }
+        >
+          RESUME
+        </button>
       </Link>
     </ul>
   );
@@ -44,6 +84,10 @@ const mapStateToProps = state => ({
   home: state.home
 });
 
-export default connect(mapStateToProps, { showLinks, showPort, showAccounts })(
-  NavLinks
-);
+export default connect(mapStateToProps, {
+  showLinks,
+  showPort,
+  showAccounts,
+  showName,
+  showWheel
+})(NavLinks);

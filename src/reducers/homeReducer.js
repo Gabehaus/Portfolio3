@@ -3,13 +3,17 @@ import {
   FADEOUT_LINKS,
   SHOW_PORT,
   FADEOUT_PORT,
-  SHOW_ACCOUNTS
+  SHOW_ACCOUNTS,
+  SHOW_WHEEL,
+  SHOW_NAME
 } from "../actions/types";
 
 const initialState = {
   showLinks: true,
   showPort: false,
-  showAccounts: true
+  showAccounts: true,
+  showWheel: false,
+  showName: true
 };
 
 export default function(state = initialState, action) {
@@ -28,6 +32,16 @@ export default function(state = initialState, action) {
       return {
         ...state,
         showAccounts: !state.showAccounts
+      };
+    case SHOW_WHEEL:
+      return {
+        ...state,
+        showWheel: !state.showWheel
+      };
+    case SHOW_NAME:
+      return {
+        ...state,
+        showName: !state.showName
       };
 
     default:

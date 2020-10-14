@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 function Name(props) {
   return (
-    <div className={props.home.showLinks ? "nameBox" : "nameBox-fadeOut"}>
+    <div className={props.home.showName ? "nameBox" : "nameBox-fadeOut"}>
       <svg
         id="nameID"
         className="name"

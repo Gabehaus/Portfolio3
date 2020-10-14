@@ -1,14 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
-import { showLinks, showPort, showAccounts } from "../actions/homeActions.js";
-import node from "../images/node.png";
-import html from "../images/html.png";
-import css from "../images/css.png";
-import bootstrap from "../images/bootstrap.png";
-import reactLogo from "../images/reactLogo.png";
-import mongoDB from "../images/mongoDB.png";
-import express from "../images/express.png";
-import vueLogo from "../images/vueLogo.png";
+import {
+  showLinks,
+  showPort,
+  showAccounts,
+  showName,
+  showWheel
+} from "../actions/homeActions.js";
+import nodeCircle from "../images/nodeCircle.png";
+
+import illustratorCircle from "../images/illustratorCircle.png";
+import photoshopCircle from "../images/photoshopCircle.png";
+import bootstrapCircle from "../images/bootstrapCircle.png";
+import reactCircle from "../images/reactCircle.png";
+import mongoCircle from "../images/mongoCircle.png";
+import expressCircle from "../images/expressCircle.png";
+import vueCircle from "../images/vueCircle.png";
+import angularCircle from "../images/angularCircle.png";
+import reactNoCircle from "../images/reactNoCircle.png";
 import CarouselSpring from "./CarouselSpring";
 import purpleClouds from "../images/purpleClouds.png";
 import Links from "./Links.jsx";
@@ -16,6 +25,7 @@ import NavLinks from "./NavLinks.jsx";
 import { data } from "../data/data";
 import Name from "./Name.jsx";
 import fullStackDev from "../images/fullStackDev.png";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 function Skyline(props) {
   const [properties, setProperties] = useState(data.properties);
@@ -23,6 +33,19 @@ function Skyline(props) {
   const [appAddress, setAppAddress] = useState(property.name);
   const [appColor, setAppColor] = useState(property.color);
   const [showLinks, setShowLinks] = useState(props.home.showLinks);
+  let [index, setIndex] = useState(0);
+  let [indexBrand, setIndexBrand] = useState(0);
+  const [brandsArray, setBrandsArray] = useState([
+    "React",
+    "CSS3",
+    "Node",
+    "Vue",
+    "Express",
+    "Bootstrap",
+    "HTML5",
+    "MongoDB"
+  ]);
+  const [brandName, setBrandName] = useState(brandsArray[0]);
 
   function nextProperty() {
     const newIndex = property.index + 1;
@@ -47,6 +70,20 @@ function Skyline(props) {
     console.log("show changed");
   }, [props.home.showLinks]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      if (indexBrand <= 6) {
+        setIndexBrand(indexBrand => indexBrand + 1);
+      } else {
+        setIndexBrand(0);
+      }
+
+      if (props.home.showWheel) {
+        setBrandName(brandsArray[indexBrand]);
+      }
+    }, 1980);
+  }, [brandName, props.home.showWheel]);
+
   return (
     <div className="skyline">
       {" "}
@@ -55,7 +92,7 @@ function Skyline(props) {
         <img
           src={purpleClouds}
           className={
-            props.home.showLinks ? "clouds-fade-in" : "clouds-fade-out"
+            props.home.showAccounts ? "clouds-fade-in" : "clouds-fade-out"
           }
         ></img>
       </div>
@@ -67,6 +104,7 @@ function Skyline(props) {
             props.showLinks();
             props.showPort();
             props.showAccounts();
+            props.showName();
           }}
         >
           X
@@ -89,41 +127,60 @@ function Skyline(props) {
         />
       </div>
       {/* End of projects modal */}
-      <div className="skillsBox">
-        <div className="logo1box">
-          <img src={node} className="rotateLogo1"></img>
-        </div>
-        <div className="logo2box">
-          <img src={html} className="rotateLogo2"></img>
-        </div>
-        <div className="logo3box">
-          <img src={css} className="rotateLogo3"></img>
-        </div>
-        <div className="logo4box">
-          <img src={bootstrap} className="rotateLogo4"></img>
-        </div>
-        <div className="logo5box">
-          <img src={reactLogo} className="rotateLogo5"></img>
-        </div>
-        <div className="logo6box">
-          <img src={mongoDB} className="rotateLogo6"></img>
-        </div>
-        <div className="logo7box">
-          <img src={express} className="rotateLogo7"></img>
-        </div>
-        <div className="logo8box">
-          <img src={vueLogo} className="rotateLogo8"></img>
-        </div>
-      </div>
+      {props.home.showWheel ? (
+        <TransitionGroup component={null} exit={false}>
+          <CSSTransition timeout={500} key={"a"}>
+            <div className="skillsBox-fadeIn">
+              <button
+                className="exit-button"
+                onClick={() => {
+                  props.showWheel();
+
+                  props.showName();
+                }}
+              >
+                X
+              </button>
+              <div className="logo1box">
+                <img src={nodeCircle} className="rotateLogo1"></img>
+              </div>
+              <div className="logo2box">
+                <img src={photoshopCircle} className="rotateLogo2"></img>
+              </div>
+              <div className="logo3box">
+                <img src={illustratorCircle} className="rotateLogo3"></img>
+              </div>
+              <div className="logo4box">
+                <img src={bootstrapCircle} className="rotateLogo4"></img>
+              </div>
+              <div className="logo5box">
+                <img src={angularCircle} className="rotateLogo5"></img>
+              </div>
+              <div className="logo6box">
+                <img src={mongoCircle} className="rotateLogo6"></img>
+              </div>
+              <div className="logo7box">
+                <img src={expressCircle} className="rotateLogo7"></img>
+              </div>
+              <div className="logo8box">
+                <img src={vueCircle} className="rotateLogo8"></img>
+              </div>
+              <div className="centerLogoBox">
+                <img src={reactNoCircle} className="centerLogo"></img>
+              </div>
+            </div>
+          </CSSTransition>
+        </TransitionGroup>
+      ) : null}
       <Name />
       <div
         className={
-          props.home.showLinks ? "fullStackDevBox" : "fullStackDevBox-fade-out"
+          props.home.showName ? "fullStackDevBox" : "fullStackDevBox-fade-out"
         }
       >
         <img src={fullStackDev} className="fullStackDev"></img>
       </div>
-      <NavLinks />
+      <NavLinks setBrandName={setBrandName} setIndexBrand={setIndexBrand} />
       <Links />
     </div> /* end of skyline */
   );
@@ -133,6 +190,10 @@ const mapStateToProps = state => ({
   home: state.home
 });
 
-export default connect(mapStateToProps, { showLinks, showPort, showAccounts })(
-  Skyline
-);
+export default connect(mapStateToProps, {
+  showLinks,
+  showPort,
+  showAccounts,
+  showName,
+  showWheel
+})(Skyline);

@@ -13,17 +13,32 @@ function Links(props) {
       id="accounts-wrapper"
     >
       <div className="account-holder">
-        <img className="account-image" src={linkedIn}></img>
-        <div>Linkedin</div>
+        <img
+          className={
+            !props.home.showWheel ? "account-image" : "greyAccount-image"
+          }
+          src={linkedIn}
+        ></img>
+        <div className="acct1">Linkedin</div>
       </div>
       <div className="account-holder">
-        <img className="account-image" src={gitHub}></img>
-        <div>Github</div>
+        <img
+          className={
+            !props.home.showWheel ? "account-image" : "greyAccount-image"
+          }
+          src={gitHub}
+        ></img>
+        <div className="acct2">Github</div>
       </div>
 
       <div className="account-holder">
-        <img className="account-image" src={freeCodeCamp}></img>
-        <div>freeCodeCamp</div>
+        <img
+          className={
+            !props.home.showWheel ? "account-image" : "greyAccount-image"
+          }
+          src={freeCodeCamp}
+        ></img>
+        <div className="acct3">freeCodeCamp</div>
       </div>
     </div>
   );
